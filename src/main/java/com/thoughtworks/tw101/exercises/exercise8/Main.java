@@ -6,6 +6,13 @@ package com.thoughtworks.tw101.exercises.exercise8;
 
 public class Main {
     public static void main(String[] args) {
-
+        RandomNumberPicker randomNumberPicker = new RandomNumberPicker();
+        UserGuessCollector userGuessCollector = new UserGuessCollector();
+        int userGuess = 0;
+        while (!randomNumberPicker.isGuessCorrect(userGuess)) {
+            userGuess = userGuessCollector.collectUserGuess();
+            randomNumberPicker.printHighLowOrWinningGuess(userGuess);
+        }
+        userGuessCollector.printGuesses();
     }
 }
