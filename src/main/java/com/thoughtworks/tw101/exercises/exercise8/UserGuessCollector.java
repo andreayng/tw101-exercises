@@ -9,7 +9,7 @@ import java.util.Scanner;
  * printGuesses - prints history of user guesses
  */
 public class UserGuessCollector {
-    private ArrayList<Integer> userGuessList = new ArrayList<Integer>();
+    private ArrayList<Integer> userGuessList = new ArrayList<>();
 
     public int collectUserGuess() {
         boolean inputAccepted = false;
