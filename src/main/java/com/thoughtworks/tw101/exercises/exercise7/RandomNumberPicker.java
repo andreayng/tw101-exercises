@@ -9,7 +9,6 @@ public class RandomNumberPicker {
     private static int randomNumber;
 
     public RandomNumberPicker() {
-        double r1 = Math.random();
         randomNumber = (int) (Math.random() * 99) + 1;
     }
 
