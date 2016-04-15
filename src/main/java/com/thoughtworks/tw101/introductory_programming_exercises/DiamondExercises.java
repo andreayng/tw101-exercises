@@ -14,18 +14,8 @@ public class DiamondExercises {
 //            *****
     private static void drawAnIsoscelesTriangle(int n) {
         for(int i = 0; i < n; i++) {
-            for(int spaceCounter = 0; spaceCounter < n - i - 1; spaceCounter++) {
-                System.out.print(" ");
-            }
-            for(int starCounter = 0; starCounter < 2 * i + 1; starCounter++) {
-                System.out.print("*");
-            }
-            for(int spaceCounter = 0; spaceCounter < n - i - 1; spaceCounter++) {
-                System.out.print(" ");
-            }
-            System.out.print("\n");
+            printCenteredLine(i, n);
         }
-
     }
 
 //    Diamond
@@ -38,18 +28,9 @@ public class DiamondExercises {
     private static void drawADiamond(int n) {
         // first half: print triangle
         drawAnIsoscelesTriangle(n);
+        // second half: upside down triangle
         for(int i = n - 2; i >=0; i--) {
-            //System.out.print(" ");
-            for(int spaceCounter = 0; spaceCounter < n - i - 1; spaceCounter++) {
-                System.out.print(" ");
-            }
-            for(int starCounter = 0; starCounter < 2 * i + 1; starCounter++) {
-                System.out.print("*");
-            }
-            for(int spaceCounter = 0; spaceCounter < n - i - 1; spaceCounter++) {
-                System.out.print(" ");
-            }
-            System.out.print("\n");
+            printCenteredLine(i, n);
         }
     }
 
@@ -63,30 +44,24 @@ public class DiamondExercises {
 //             *
     private static void drawADiamondWithYourName(int n) {
         for(int i = 0; i < n-1; i++) {
-            for(int spaceCounter = 0; spaceCounter < n - i - 1; spaceCounter++) {
-                System.out.print(" ");
-            }
-            for(int starCounter = 0; starCounter < 2 * i + 1; starCounter++) {
-                System.out.print("*");
-            }
-            for(int spaceCounter = 0; spaceCounter < n - i - 1; spaceCounter++) {
-                System.out.print(" ");
-            }
-            System.out.print("\n");
+            printCenteredLine(i, n);
         }
         System.out.println("Andie");
         for(int i = n - 2; i >=0; i--) {
-            //System.out.print(" ");
-            for(int spaceCounter = 0; spaceCounter < n - i - 1; spaceCounter++) {
-                System.out.print(" ");
-            }
-            for(int starCounter = 0; starCounter < 2 * i + 1; starCounter++) {
-                System.out.print("*");
-            }
-            for(int spaceCounter = 0; spaceCounter < n - i - 1; spaceCounter++) {
-                System.out.print(" ");
-            }
-            System.out.print("\n");
+            printCenteredLine(i, n);
         }
+    }
+
+    private static void printCenteredLine(int currentLineNumber, int totalLines) {
+        for(int spaceCounter = 0; spaceCounter < totalLines - currentLineNumber - 1; spaceCounter++) {
+            System.out.print(" ");
+        }
+        for(int starCounter = 0; starCounter < 2 * currentLineNumber + 1; starCounter++) {
+            System.out.print("*");
+        }
+        for(int spaceCounter = 0; spaceCounter < totalLines - currentLineNumber - 1; spaceCounter++) {
+            System.out.print(" ");
+        }
+        System.out.print("\n");
     }
 }
