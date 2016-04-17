@@ -15,11 +15,11 @@ public class UserGuessCollector {
         boolean inputAccepted = false;
         Scanner reader = new Scanner(System.in);
         int userGuess = 0;
-        while(!inputAccepted) {
+        while(true) {
             try {
                 System.out.print("Enter guess: ");
                 userGuess = Integer.parseInt(reader.next());
-                inputAccepted = true;
+                break;
             } catch (NumberFormatException e) {
                 System.out.println("Input must be an integer, please try again.");
             }
